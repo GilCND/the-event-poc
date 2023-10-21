@@ -8,15 +8,15 @@
 import Foundation
 
 public struct EventResponse: Decodable, Identifiable, Equatable {
-    public let artist: [Artists]?
+    public let artist: Artists?
     public let artistID: Int?
     public let date: String?
     public let genre: String?
-    public let id: Int?
+    public let id: Int
     public let name: String?
     public let sortID: Int?
-    public let venue: [Venue]?
-    public let venueID: String?
+    public let venue: Venue?
+    public let venueID: Int?
 
     enum CodingKeys: String, CodingKey {
         case artistID = "artistId"

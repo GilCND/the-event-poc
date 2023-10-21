@@ -58,8 +58,7 @@ public struct EventServiceAPI: EventService {
         components.scheme = "http"
         components.host = "ec2-44-211-66-223.compute-1.amazonaws.com"
         components.path += relativePath
-        //components.queryItems = [URLQueryItem(name: "pretty", value: nil)]
-        components.queryItems?.append(contentsOf: queryItems)
+        components.queryItems = queryItems
         
         if let url = components.url {
             var request = URLRequest(url: url, timeoutInterval: Double.infinity)
@@ -92,23 +91,20 @@ public struct EventServiceAPI: EventService {
         }
     }
     
-    private func fetchData<T: Decodable>(relativePath: String, queryItems: [URLQueryItem] = [], decoder: JSONDecoder = JSONDecoder(), completion: @escaping (Result<T, NetworkError>) -> Void) {
+    private func fetchData<T: Decodable>(relativePath: String, queryItems: [URLQueryItem], decoder: JSONDecoder = JSONDecoder(), completion: @escaping (Result<T, NetworkError>) -> Void) {
         serviceAPI(relativePath: relativePath, queryItems: queryItems) { result in
             
             switch result {
             case .success(let data):
-                print(String(data: data, encoding: .utf8) ?? "No Data String")
                 do {
                     let decodedData = try decoder.decode(T.self, from: data)
                     completion(.success(decodedData))
-//                } catch {
-//                    completion(.failure(.badDecoding))
-//                }
                 } catch {
                     print("Error decoding JSON: \(error)")
                     if let decodingError = error as? DecodingError {
                         print("DecodingError: \(decodingError)")
                     }
+                    completion(.failure(.badDecoding))
                 }
             case .failure(let error):
                 completion(.failure(error))
@@ -116,21 +112,27 @@ public struct EventServiceAPI: EventService {
         }
     }
     
-    //MARK: Fetch Song Event
-    public func fetchSongEvent(using queryType: QueryType, eventParams: EventParams, completion: @escaping (Result<[EventResponse], Error>) -> Void) {
+    //MARK: Fetch Entity
+    public func fetchEntity<T: Decodable>(using queryType: QueryType, eventParams: EventParams, completion: @escaping (Result<T, Error>) -> Void) {
         var relativePath = ""
         var queryItems: [URLQueryItem] = []
-        let currentDate = Date()
-        let twoWeeksAhead = Calendar.current.date(byAdding: .day, value: +13, to: currentDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let currentDate = dateFormatter.string(from: Date())
+        var twoWeeksAhead: String? = nil
+        
+        if let futureDate = Calendar.current.date(byAdding: .day, value: 13, to: Date()) {
+            twoWeeksAhead = dateFormatter.string(from: futureDate)
+        }
         
         switch eventParams {
-        //TODO: Implement ID
         case .artists(let id):
-            relativePath = "/artists"
-        case .venue(let id) :
-            relativePath = "/venue"
-        case .performances(let id) :
-            relativePath =  "/performances"
+            relativePath = "/artists/\(id.asStringOrEmpty)"
+        case .venue(let id):
+            relativePath = "/venues/\(id.asStringOrEmpty)"
+        case .performances(let id):
+            relativePath = "/artists/\(id.asStringOrEmpty)performances"
         }
        
         switch queryType {
@@ -138,14 +140,13 @@ public struct EventServiceAPI: EventService {
                 queryItems = [URLQueryItem(name: "from", value: "\(currentDate)")]
         case .fromTo:
             if let twoWeeksAhead {
-                let timeStamp = Int(twoWeeksAhead.timeIntervalSince1970)
-                queryItems = [URLQueryItem(name: "from", value: "\(currentDate)"),               URLQueryItem(name: "to", value: "\(timeStamp)")]
+                queryItems = [URLQueryItem(name: "from", value: "\(currentDate)"),               URLQueryItem(name: "to", value: "\(twoWeeksAhead)")]
             }
         case .all:
             queryItems = []
         }
         
-        fetchData(relativePath: relativePath, queryItems: queryItems) { (result: Result<[EventResponse], NetworkError>) in
+        fetchData(relativePath: relativePath, queryItems: queryItems) { (result: Result<T, NetworkError>) in
             switch result {
             case .success(let decodedData):
                 DispatchQueue.main.async {
@@ -156,5 +157,25 @@ public struct EventServiceAPI: EventService {
                 completion(.failure(error))
             }
         }
+    }
+    
+    //MARK: Image URL builder
+    public func imageURLBuilder(name: String, eventParams: EventParams) -> URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "songleap.s3.amazonaws.com"
+        
+        let entity = name.replacingOccurrences(of: " ", with: "+")
+        var relativePath = ""
+        
+        switch eventParams {
+        case .artists(id: _):
+            relativePath = "artists"
+        default:
+            relativePath = "venues"
+        }
+        components.path += "/\(relativePath)/\(entity).png"
+        
+        return components.url
     }
 }

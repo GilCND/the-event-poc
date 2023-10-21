@@ -16,5 +16,6 @@ public protocol NetworkServiceDataTask {
 }
 
 public protocol EventService {
-    func fetchSongEvent(using queryType: QueryType, eventParams: EventParams, completion: @escaping (Result<[EventResponse], Error>) -> Void)
+    func fetchEntity<T: Decodable>(using queryType: QueryType, eventParams: EventParams, completion: @escaping (Result<T, Error>) -> Void)
+    func imageURLBuilder(name: String, eventParams: EventParams) -> URL?
 }
