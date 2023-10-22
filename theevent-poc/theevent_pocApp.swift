@@ -11,7 +11,7 @@ import SwiftUI
 struct theevent_pocApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
