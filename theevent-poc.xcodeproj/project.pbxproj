@@ -3,12 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2A4F522AE2C5C800C951BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A4F512AE2C5C800C951BB /* HomeView.swift */; };
+		4A2A4F552AE2C5E900C951BB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2A4F542AE2C5E900C951BB /* HomeViewModel.swift */; };
+		4A879FC22AE302C30049DC83 /* EventAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4A879FC12AE302C30049DC83 /* EventAPI */; };
+		4A879FC52AE43DCD0049DC83 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A879FC42AE43DCD0049DC83 /* DetailsViewModel.swift */; };
+		4A879FC72AE43E090049DC83 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A879FC62AE43E090049DC83 /* DetailsView.swift */; };
+		4A879FCA2AE44A8E0049DC83 /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A879FC92AE44A8E0049DC83 /* ImageCard.swift */; };
+		4A879FCD2AE44C670049DC83 /* Logger+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A879FCC2AE44C670049DC83 /* Logger+Category.swift */; };
+		4A879FD12AE481630049DC83 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A879FD02AE481630049DC83 /* String.swift */; };
 		4ADF968B2AE196ED007FE2C7 /* theevent_pocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF968A2AE196ED007FE2C7 /* theevent_pocApp.swift */; };
-		4ADF968D2AE196ED007FE2C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF968C2AE196ED007FE2C7 /* ContentView.swift */; };
 		4ADF968F2AE196EE007FE2C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADF968E2AE196EE007FE2C7 /* Assets.xcassets */; };
 		4ADF96932AE196EE007FE2C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADF96922AE196EE007FE2C7 /* Preview Assets.xcassets */; };
 		4ADF969D2AE196EE007FE2C7 /* theevent_pocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF969C2AE196EE007FE2C7 /* theevent_pocTests.swift */; };
@@ -34,11 +41,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A2A4F512AE2C5C800C951BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4A2A4F542AE2C5E900C951BB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4A879FBF2AE302280049DC83 /* EventAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EventAPI; sourceTree = "<group>"; };
+		4A879FC32AE30C9F0049DC83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4A879FC42AE43DCD0049DC83 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		4A879FC62AE43E090049DC83 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		4A879FC92AE44A8E0049DC83 /* ImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCard.swift; sourceTree = "<group>"; };
+		4A879FCC2AE44C670049DC83 /* Logger+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Category.swift"; sourceTree = "<group>"; };
+		4A879FD02AE481630049DC83 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		4ADF96872AE196ED007FE2C7 /* theevent-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "theevent-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADF968A2AE196ED007FE2C7 /* theevent_pocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theevent_pocApp.swift; sourceTree = "<group>"; };
-		4ADF968C2AE196ED007FE2C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4ADF968E2AE196EE007FE2C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4ADF96902AE196EE007FE2C7 /* theevent_poc.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = theevent_poc.entitlements; sourceTree = "<group>"; };
 		4ADF96922AE196EE007FE2C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4ADF96982AE196EE007FE2C7 /* theevent-pocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "theevent-pocTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADF969C2AE196EE007FE2C7 /* theevent_pocTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theevent_pocTests.swift; sourceTree = "<group>"; };
@@ -52,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A879FC22AE302C30049DC83 /* EventAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +87,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2A4F502AE2C59600C951BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A2A4F512AE2C5C800C951BB /* HomeView.swift */,
+				4A879FC62AE43E090049DC83 /* DetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A2A4F532AE2C5DA00C951BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A2A4F542AE2C5E900C951BB /* HomeViewModel.swift */,
+				4A879FC42AE43DCD0049DC83 /* DetailsViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A879FC82AE44A640049DC83 /* View Components */ = {
+			isa = PBXGroup;
+			children = (
+				4A879FC92AE44A8E0049DC83 /* ImageCard.swift */,
+			);
+			path = "View Components";
+			sourceTree = "<group>";
+		};
+		4A879FCB2AE44C4C0049DC83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A879FCC2AE44C670049DC83 /* Logger+Category.swift */,
+				4A879FD02AE481630049DC83 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4ADF967E2AE196ED007FE2C7 = {
 			isa = PBXGroup;
 			children = (
+				4A879FBF2AE302280049DC83 /* EventAPI */,
 				4ADF96892AE196ED007FE2C7 /* theevent-poc */,
 				4ADF969B2AE196EE007FE2C7 /* theevent-pocTests */,
 				4ADF96A52AE196EE007FE2C7 /* theevent-pocUITests */,
@@ -95,10 +146,13 @@
 		4ADF96892AE196ED007FE2C7 /* theevent-poc */ = {
 			isa = PBXGroup;
 			children = (
+				4A879FCB2AE44C4C0049DC83 /* Extensions */,
+				4A879FC82AE44A640049DC83 /* View Components */,
+				4A879FC32AE30C9F0049DC83 /* Info.plist */,
+				4A2A4F532AE2C5DA00C951BB /* Models */,
+				4A2A4F502AE2C59600C951BB /* Views */,
 				4ADF968A2AE196ED007FE2C7 /* theevent_pocApp.swift */,
-				4ADF968C2AE196ED007FE2C7 /* ContentView.swift */,
 				4ADF968E2AE196EE007FE2C7 /* Assets.xcassets */,
-				4ADF96902AE196EE007FE2C7 /* theevent_poc.entitlements */,
 				4ADF96912AE196EE007FE2C7 /* Preview Content */,
 			);
 			path = "theevent-poc";
@@ -145,6 +199,9 @@
 			dependencies = (
 			);
 			name = "theevent-poc";
+			packageProductDependencies = (
+				4A879FC12AE302C30049DC83 /* EventAPI */,
+			);
 			productName = "theevent-poc";
 			productReference = 4ADF96872AE196ED007FE2C7 /* theevent-poc.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 4ADF967E2AE196ED007FE2C7;
+			packageReferences = (
+				4A879FC02AE302C30049DC83 /* XCLocalSwiftPackageReference "EventAPI" */,
+			);
 			productRefGroup = 4ADF96882AE196ED007FE2C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADF968D2AE196ED007FE2C7 /* ContentView.swift in Sources */,
+				4A2A4F522AE2C5C800C951BB /* HomeView.swift in Sources */,
+				4A879FCD2AE44C670049DC83 /* Logger+Category.swift in Sources */,
+				4A879FC52AE43DCD0049DC83 /* DetailsViewModel.swift in Sources */,
 				4ADF968B2AE196ED007FE2C7 /* theevent_pocApp.swift in Sources */,
+				4A2A4F552AE2C5E900C951BB /* HomeViewModel.swift in Sources */,
+				4A879FC72AE43E090049DC83 /* DetailsView.swift in Sources */,
+				4A879FD12AE481630049DC83 /* String.swift in Sources */,
+				4A879FCA2AE44A8E0049DC83 /* ImageCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +415,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -404,9 +472,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -422,16 +492,20 @@
 				DEVELOPMENT_ASSET_PATHS = "\"theevent-poc/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "theevent-poc/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -439,8 +513,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.the.event-poc.theevent-poc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,16 +533,20 @@
 				DEVELOPMENT_ASSET_PATHS = "\"theevent-poc/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "theevent-poc/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -475,8 +554,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.the.event-poc.theevent-poc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -609,6 +689,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		4A879FC02AE302C30049DC83 /* XCLocalSwiftPackageReference "EventAPI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = EventAPI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A879FC12AE302C30049DC83 /* EventAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EventAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4ADF967F2AE196ED007FE2C7 /* Project object */;
 }
