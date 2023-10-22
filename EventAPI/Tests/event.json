@@ -1,1 +1,12 @@
-//TODO: Implement tests
+[
+    {"genre":"Punk","id":1,"name":"Vomit Spots"},
+    {"genre":"Country","id":2,"name":"High Noon Saloon"},
+    {"genre":"Pop","id":3,"name":"Diva Moon Rescue"},
+    {"genre":"Synthpop","id":4,"name":"Shake The Disease"},
+    {"genre":"Goth","id":5,"name":"Spellbound"},
+    {"genre":"Metal","id":6,"name":"Holy Shëët"},
+    {"genre":"Dance","id":7,"name":"Beat Illuminati"},
+    {"genre":"Folk","id":8,"name":"Kerouac Ginsburg"},
+    {"genre":"Blues","id":9,"name":"Muddy Ray"},
+    {"genre":"Rock","id":10,"name":"Khan Tusion"}
+]
