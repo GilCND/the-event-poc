@@ -28,19 +28,34 @@ struct ImageCard: View {
 
     var body: some View {
         VStack (spacing: 5) {
-            AsyncImage(url: URL(string: url)) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(40)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: size.selectedSize.width, height: size.selectedSize.height)
-                    .shadow(color:.gray ,radius: 8, y: 2)
-                    .padding(.leading, 0)
-            } placeholder: {
-                ProgressView()
-                    .frame(width: size.selectedSize.width, height: size.selectedSize.height)
-            }
+            AsyncImage(url: URL(string: url)) { phase in
+                   switch phase {
+                   case .success(let image):
+                       image
+                           .resizable()
+                           .scaledToFit()
+                           .cornerRadius(40)
+                           .aspectRatio(contentMode: .fit)
+                           .frame(width: size.selectedSize.width, height: size.selectedSize.height)
+                           .shadow(color: .gray, radius: 8, y: 2)
+                           .padding(.leading, 0)
+                           
+                   case .failure:
+                       Image(systemName: "wand.and.rays")
+                           .resizable()
+                           .scaledToFit()
+                           .foregroundColor(.gray)
+                           .frame(width: size.selectedSize.width / 2, height: size.selectedSize.height / 2)
+                           .padding(size.selectedSize.height / 4)
+                       
+                   case .empty:
+                       ProgressView()
+                           .frame(width: size.selectedSize.width, height: size.selectedSize.height)
+                           
+                   @unknown default:
+                       EmptyView()
+                   }
+               }
             VStack {
                 Text(title ?? "")
                     .foregroundStyle(Color(.white))

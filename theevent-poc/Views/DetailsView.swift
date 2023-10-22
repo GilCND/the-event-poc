@@ -8,16 +8,22 @@
 import SwiftUI
 import EventAPI
 
+enum EntitySelected {
+    case venue, artist
+}
+
 struct DetailsView: View {
     var entity: EventResponse
     var venue: EventResponse?
+    var entitySelected : EntitySelected
     @Environment(\.dismiss) var dismiss
     @StateObject var detailsViewModel: DetailsViewModel
     
     
-    init(entity: EventResponse, venue: EventResponse?) {
+    init(entity: EventResponse, venue: EventResponse?, entitySelected: EntitySelected) {
         self.entity = entity
         self.venue = venue
+        self.entitySelected = entitySelected
         self._detailsViewModel = StateObject(wrappedValue: DetailsViewModel())
     }
     
@@ -25,11 +31,20 @@ struct DetailsView: View {
         NavigationView {
             VStack {
                 HStack {
-                    entityImage
-                        .padding()
+                    switch entitySelected {
+                    case .venue:
+                        entityImage(eventParams: .artists(id: nil), entity: entity)
+                            .padding()
+                    case .artist:
+                        if let venue = venue {
+                            entityImage(eventParams: .venue(id: nil), entity: venue)
+                                .padding()
+                        }
+                    }
                     VStack (spacing: 15) {
                         entityName
                         entityGenre
+                        venueName
                     }
                     .padding()
                 }
@@ -60,6 +75,17 @@ struct DetailsView: View {
         }
     }
     
+    var venueName: some View {
+        VStack {
+            if venue?.name != entity.name {
+                Text("Venue")
+                    .bold()
+                    .font(.title2)
+                Text(venue?.name ?? "")
+            }
+        }
+    }
+    
     var entityPerformances: some View {
         VStack {
             Text("Next Performances")
@@ -87,8 +113,8 @@ struct DetailsView: View {
         }
     }
     
-    var entityImage: some View {
-        let url: String = detailsViewModel.buildImageURL(name: venue?.name ?? "", eventParams: .venue(id: nil))
+    func entityImage(eventParams: EventParams, entity: EventResponse) -> some View {
+        let url: String = detailsViewModel.buildImageURL(name: entity.name ?? "", eventParams: eventParams)
         return ImageCard(size: .small, url: url)
     }
     
